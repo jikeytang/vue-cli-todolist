@@ -111,7 +111,7 @@ import 'todomvc-app-css/index.css'
 组件是Vue开发当中最小的组成单元，以.vue扩展名结尾，他包括：Html结构, JS, CSS，数据流，监听处理子组件触发事件，引用子组件(ref)。
 如何拆分是一个开发习惯，并没有一个准确的原则，细拆可以拆分一个按钮为一个组件单元，但拆的越细坏处是会造成页面维护的困难，好处是页面组件的复用性更好。如果拆的少，组件结构关系比较简单，但是页面组件复用性不高，最终要达到期望效果还是要平衡和取舍。
 根据当前页面的特点，大体拆分为以下四个部分，分别为：Header, List, Footer, Copyright，新建对应的*.vue文件并且放置在`vue-cli-todolist/src/components`目录下，然后相应的组件在`vue-cli-todolist/src/views/home.vue`中引入，然后在增加：
-```
+```javascript
 components:{ Header, List, Footer }
 ```
 需要注意的是`Copyright`在整个操作容器外部，所以放在`App.vue`中。
@@ -120,7 +120,7 @@ components:{ Header, List, Footer }
 由于Vue单数据流的限制规则，此组件页面是操作整个Todolist数据源的总页面，所有对数据的操作方法都汇总在此组件来实现，包括子组件对数据源的操作。父级 prop 值的更新会向下传递，但不能反向传递，也不能在子组件直接修改 prop。这样做的目的是为了防止从子组件意外改变父级组件的状态，从而导致数据流向难以理解。其实对Todolist的操作，就是常说的是**增删改查**，只是少了一个查找而已，页面上的常规操作就是对Todolist数据源对象的的增加删除修改，那对应的代码其实就是数据的`push, splice, forEach`等方法。需要注意的是这些操作数据的结果都是基于浏览器的，刷新之后并不存在，解决办法后端接口存储和本地存储，本案例中通过localStorage存储在本地。
 
 然后我们找一行有特征引入组件的方式来分析一下，比如：
-```
+```javascript
 <main-view :todos="filteredTodos" @del-todo="delTodo" @all-done="allDone"></main-view>
 ```
 - main-view表示组件名称，如果是全局组件那名称是唯一的。
@@ -136,7 +136,7 @@ components:{ Header, List, Footer }
 ##### 4.3.1 template
 - v-model
 扩展为：
-```
+```html
 <input v-model="field" />
 <input :value="field" @input="field = $event.target.value" />
 ```
@@ -170,7 +170,7 @@ https://cn.vuejs.org/v2/guide/computed.html
 ##### 4.3.3 style
 - vh
 css3新单位，相对于视口的高度的百分比，视口被均分为100单位的vh，1vh = 视口高度的1%。
-```
+```html
 h1 {
 	font-size: 8vh;
 }
@@ -179,7 +179,7 @@ h1 {
 
 #### 4.4 Footer.vue
 点击状态每次切换需要切换画面，画面的变化依赖于路由，所以需要记录路由名称 `this.current`，在home.vue中通过watch来实现：
-```
+```javascript
 '$route' (to) {
   this.current = to.name
 },
@@ -198,7 +198,7 @@ Vue全家桶相关的Router, Vuex都需要在此文件绑定。
 - devDependencies 开发依赖 npm i -D moduleName
 
 同时习惯于vue-cli2 npm run dev方式的同学，也可以在package.json中增加：
-```
+```json
 "scripts": {
   "dev": "npm run serve",
   "serve": "vue-cli-service serve"
@@ -213,7 +213,7 @@ Vue全家桶相关的Router, Vuex都需要在此文件绑定。
 
 ### 8. npm run build
 在根目录增加vue.config.js，css,js默认访问根目录，而我们发布之后的目录是http://www.host.com/dist/，多了一层dist，所以需要配置publicPath，否则控制台报找不到资源的错误：
-```
+```javascript
 module.exports = {
   publicPath: './',
   productionSourceMap: false
