@@ -212,7 +212,7 @@ Vue全家桶相关的Router, Vuex都需要在此文件绑定。
 记录当前状态下实际安装的各个npm package的具体来源和版本号，package.json文件只能锁定大版本，也就是版本号的第一位，并不能锁定后面的小版本你每次npm install都是拉取的该大版本下的最新的版本，为了稳定性考虑几乎是不敢随意升级依赖包的，这将导致多出来很多工作量，所以package-lock.json安装一个依赖的时候就锁定在你安装的这个版本。
 
 ### 8. npm run build
-在根目录增加vue.config.js，css,js默认访问根目录，而我们发布之后的目录是http://www.host.com/dist/，多了一层dist，所以需要配置publicPath，否则控制台报找不到资源的错误：
+在根目录增加vue.config.js，css,js默认访问根目录，而我们发布之后的目录是`http://www.host.com/dist/`，多了一层dist，所以需要配置publicPath，否则控制台报找不到资源的错误：
 ```javascript
 module.exports = {
   publicPath: './',
