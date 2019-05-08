@@ -51,7 +51,7 @@ export default {
       this.todos.splice(this.todos.indexOf(todo), 1)
     },
     removeCompleted () {
-      this.todos = this.active(this.todos)
+      this.todos = util.active(this.todos)
     }
   }
 }
