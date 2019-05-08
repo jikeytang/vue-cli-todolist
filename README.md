@@ -221,6 +221,11 @@ module.exports = {
 ```
 到此为止，今天的分享就结束了，下次分享见。
 
-
+接下来的计划：
+- [x] 基础版
+- [ ] Vuex
+- [ ] Element-UI
+- [ ] Vue-ant-design
+- [ ] IView
 
 
