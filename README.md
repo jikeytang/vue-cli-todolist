@@ -14,7 +14,9 @@ Vue-cli-todolist，是一个用vue-cli3工具初始化项目，然后在此基�
 分享前的约定: 以下大部分命令步骤基于Mac系统，Windows系统差异点也会提到。
 
 #### 1.1 先在Github建立仓库
-为了保持代码能够长期有效，也方便面试时展示，建议将代码以Git的方式存放，比如：http://github.com，http://gitee.com,https://bitbucket.org/ 等等。选择任意一款新建仓库：`vue-cli-todolist`，git clone仓库到本地(Windows系统建议非桌面的盘符路径存储，比如D:/vue-todolist)，然后`cd ..`，在iTerm新建一个 tab 准备进行安装Vue-cli，留存当前的tab等安装完成之后运行npm run serve。 
+为了保持代码能够长期有效，也方便面试时展示，建议将代码以Git的方式存放，比如：http://github.com，http://gitee.com,https://bitbucket.org/ 等等。
+选择任意一款新建仓库：`vue-cli-todolist`，git clone仓库到本地(Windows系统建议非桌面的盘符路径存储，比如D:/vue-todolist)，然后`cd ..`，在iTerm新建一个 tab 准备进行安装Vue-cli，留存当前的tab等安装完成之后运行npm run serve。 
+PS: Windows下推荐命令行代替工具[cmder](https://cmder.net)，与编辑器分离，且支持多标签，VI编辑。
 
 #### 1.2 Vue-cli的作用
 - 本地生成文件和配置，减少繁琐的配置，以最短的时间最小的文件结构让项目先跑起来，让更多的精力关注开发本身。vue-cli3中vue.config.js不是必须，新建之后自动覆盖默认设置。
