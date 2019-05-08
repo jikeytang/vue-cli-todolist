@@ -25,7 +25,7 @@ PS: Windows下推荐命令行代替工具[cmder](https://cmder.net)，建议完�
 
 #### 1.3 Vue-cli的全局安装
 如果有旧版vuecli先得卸载，然后才能安装新版。
-```
+```shell
 npm uninstall -g vue-cli
 vue -V
 ```
