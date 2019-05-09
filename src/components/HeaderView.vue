@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <h1>todos</h1>
-    <el-input class="new-todo" v-model="newTodo" placeholder="请输入待办事项" @keyup.enter="addTodo" clearable></el-input>
+    <el-input class="new-todo" v-model="newTodo" placeholder="请输入待办事项" @keyup.enter.native="addTodo" clearable></el-input>
   </header>
 </template>
 <script>

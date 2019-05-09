@@ -12,7 +12,7 @@
         <a href="#/completed" :class="{ selected: this.current === 'completed' }">已完成</a>
       </li>
     </ul>
-    <el-button class="clear-completed" @click="removeCompleted" size="mini" type="primary">清除</el-button>
+    <el-button class="el-clear-completed" @click="removeCompleted" size="mini" type="primary">清除</el-button>
   </footer>
 </template>
 <script>
@@ -33,4 +33,12 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.el-clear-completed{
+  float: right;
+  position: relative;
+  line-height: 7px;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
