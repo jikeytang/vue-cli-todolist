@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <h1>todos</h1>
-    <input class="new-todo" autofocus autocomplete="off" placeholder="请输入待办事项" v-model="newTodo" @keyup.enter="addTodo">
+    <el-input class="new-todo" v-model="newTodo" placeholder="请输入待办事项" @keyup.enter="addTodo" clearable></el-input>
   </header>
 </template>
 <script>
@@ -16,7 +16,7 @@ export default {
     addTodo () {
       var value = this.newTodo && this.newTodo.trim()
 
-      if(!value) {
+      if (!value) {
         return
       }
 
@@ -26,4 +26,11 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.new-todo{
+  padding:16px 0 16px 60px;
+  input{
+    border:0;
+  }
+}
+</style>

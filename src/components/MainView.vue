@@ -1,7 +1,6 @@
 <template>
   <section class="main">
-    <input id="toggle-all" type="checkbox" class="toggle-all" v-model="allDone">
-    <label for="toggle-all">全选</label>
+    <el-checkbox class="el-toogle-all" v-model="allDone"></el-checkbox>
     <ul class="todo-list">
       <li class="todo" v-for="(item, index) in todos" :class="{ completed: item.completed, editing: item == editedTodo  }" :key="index">
         <div class="view">
@@ -67,5 +66,13 @@ export default {
 <style lang="scss">
 .main{
   min-height:45vh;
+}
+.el-toogle-all {
+  width: 60px;
+  height: 34px;
+  font-size: 0;
+  position: absolute;
+  top: -52px;
+  left: 15px;
 }
 </style>
