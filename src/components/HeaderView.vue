@@ -16,11 +16,11 @@ export default {
     addTodo () {
       var value = this.newTodo && this.newTodo.trim()
 
-      if(!value) {
+      if (!value) {
         return
       }
 
-      this.$emit('add-todo', { title: value, completed: false })
+      this.$store.dispatch('addTodo', { title: value, completed: false })
       this.newTodo = ''
     }
   }

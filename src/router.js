@@ -12,17 +12,17 @@ export default new Router({
     {
       path: '/all',
       name: 'all',
-      component: () => import('@/views/home'),
+      component: () => import('@/views/home')
     },
     {
       path: '/active',
       name: 'active',
-      component: () => import('@/views/home'),
+      component: () => import('@/views/home')
     },
     {
       path: '/completed',
       name: 'completed',
-      component: () => import('@/views/home'),
+      component: () => import('@/views/home')
     }
-  ],
+  ]
 })
