@@ -23,6 +23,11 @@ export default new Router({
       path: '/completed',
       name: 'completed',
       component: () => import('@/views/home'),
+    },
+    {
+      path: '/example',
+      name: 'example',
+      component: () => import('@/views/example'),
     }
   ],
 })
