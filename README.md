@@ -32,7 +32,19 @@ vue -V
 
 1. 安装前提必须安装[nodejs](https://nodejs.org/en/)，安装完之后通过`node -v`来确定是否安装成功，如果输出类似`v10.15.3`字样表示安装成功。//同时也安装了`npm`，输入以下命令来确认`npm -v`，如果输入`6.4.1`字样表示安装成功。 call:node
 2. 通过`npm install -g @vue/cli`命令安装最新版，其中`-g`的意思是安装到全局，就像一个全局变量一样，以后在任何一个目录都可以运行创建命令`vue create`。
+
+  - 2019.6.20 Windows出现 vue init webpack my-project 之后不能回车的临时[解决办法](https://github.com/vuejs/vue-cli/issues/4177)
+  实际操作步骤：
+  
+  npm root -g 找到npm根目录，然后cd+\@vue\cli-init 这个目录，比如：
+  ```shell
+  npm root -g  // C:\Users\jikeytang\AppData\Roaming\npm\node_modules
+  cd C:\Users\jikeytang\AppData\Roaming\npm\node_modules\@vue\cli-init
+  npm i inquirer@~6.3.1
+  ```
+  
 PS: 如果是使用Mac的同学此处可能需要增加sudo，完整的命令就是这样：`sudo npm install --global vue-cli`，否则会报这样的错误`Error: EACCES: permission denied, access '/usr/local/lib/node_modules'`，如果是Windows同学注意在右键用管理员方式打开cmd。
+
 3. `vue create vue-cli-todolist` 通过此命令在原来git clone项目的Tab中来创建一个项目。
 这时会有三个选项选择，
 
