@@ -19,7 +19,19 @@ PS: Windows下推荐命令行代替工具[cmder](https://cmder.net)，建议完�
 
 #### 1.2 Vue-cli的作用
 - 本地生成文件和配置，减少繁琐的配置，以最短的时间最小的文件结构让项目先跑起来，让更多的精力关注开发本身。vue-cli3中vue.config.js不是必须，新建之后自动覆盖默认设置。
-- //本地生成文件和配置，Vue-cli2直接通过git命令从远程github仓库拉取相应的模板，[webpack-template](https://github.com/vuejs-templates/webpack/tree/develop/template)，([其它模板](https://github.com/vuejs-templates))。然后复制到本地，vue-cli3直接在本地创建相关的配置文件，有部分还需要自己手动创建，比如vue.config.js。vue-cli3也可以[自定义模板](https://cli.vuejs.org/zh/dev-guide/plugin-dev.html#creator)。
+- [拉取 2.x 模板 (旧版本)](https://cli.vuejs.org/zh/guide/creating-a-project.html#%E6%8B%89%E5%8F%96-2-x-%E6%A8%A1%E6%9D%BF-%E6%97%A7%E7%89%88%E6%9C%AC)
+
+  
+  - 2019.6.20 Windows出现 vue init webpack my-project 之后不能回车的临时[解决办法](https://github.com/vuejs/vue-cli/issues/4177)
+  实际操作步骤：
+  
+  npm root -g 找到npm根目录，然后cd+\@vue\cli-init 这个目录，比如：
+  ```shell
+  npm root -g  // C:\Users\jikeytang\AppData\Roaming\npm\node_modules
+  cd C:\Users\jikeytang\AppData\Roaming\npm\node_modules\@vue\cli-init
+  npm i inquirer@~6.3.1
+  ```
+  
 - 那如果不使用vue-cli那怎么办？就是手动在本地创始化package.json，然后其它相应文件手动创建手写配置，效率低，出错可能大。
 
 #### 1.3 Vue-cli的全局安装
@@ -32,16 +44,6 @@ vue -V
 
 1. 安装前提必须安装[nodejs](https://nodejs.org/en/)，安装完之后通过`node -v`来确定是否安装成功，如果输出类似`v10.15.3`字样表示安装成功。//同时也安装了`npm`，输入以下命令来确认`npm -v`，如果输入`6.4.1`字样表示安装成功。 call:node
 2. 通过`npm install -g @vue/cli`命令安装最新版，其中`-g`的意思是安装到全局，就像一个全局变量一样，以后在任何一个目录都可以运行创建命令`vue create`。
-
-  - 2019.6.20 Windows出现 vue init webpack my-project 之后不能回车的临时[解决办法](https://github.com/vuejs/vue-cli/issues/4177)
-  实际操作步骤：
-  
-  npm root -g 找到npm根目录，然后cd+\@vue\cli-init 这个目录，比如：
-  ```shell
-  npm root -g  // C:\Users\jikeytang\AppData\Roaming\npm\node_modules
-  cd C:\Users\jikeytang\AppData\Roaming\npm\node_modules\@vue\cli-init
-  npm i inquirer@~6.3.1
-  ```
   
 PS: 如果是使用Mac的同学此处可能需要增加sudo，完整的命令就是这样：`sudo npm install --global vue-cli`，否则会报这样的错误`Error: EACCES: permission denied, access '/usr/local/lib/node_modules'`，如果是Windows同学注意在右键用管理员方式打开cmd。
 
