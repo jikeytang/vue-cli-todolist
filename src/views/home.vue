@@ -18,6 +18,9 @@ export default {
     MainView,
     FooterView
   },
+  created () {
+    console.log($)
+  },
   data () {
     return {
       todos: util.fetch(),
